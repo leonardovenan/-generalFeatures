@@ -50,3 +50,15 @@ leo = Person('Leo', 29)
 
 print(leo)
 print(repr(leo))
+
+# voice recorder
+
+import sounddevice
+from scipy.to.wavfile import write
+fs=44200 #sample_rate
+second = int(input("Entre com o tempo de duracao"))
+print("Gravando...\n")
+record_voice = sounddevice.rec(int(second*fs), samplerate=fs, channems=2)
+sounddevice.wait()
+write("out.wav", fs, record_voice)
+print("Acabando gravação. \nPor favor verifique..")
